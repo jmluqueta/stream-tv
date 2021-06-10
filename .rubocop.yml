@@ -12,6 +12,7 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'Gemfile'
+    - 'lib/tasks/auto_annotate_models.rake'
     - 'log/**/*'
     - 'node_modules/**/*'
     - 'Rakefile'
