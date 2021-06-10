@@ -1,0 +1,34 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - '.git/**/*'
+    - 'bin/**/*'
+    - 'config.ru'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'Gemfile'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'Rakefile'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'test/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+# Style Cops
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+RSpec/FactoryBot/CreateList:
+  Enabled: false
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe']
