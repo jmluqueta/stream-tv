@@ -22,4 +22,5 @@
 #  fk_rails_...  (parent_id => contents.id)
 #
 class Movie < Content
+  has_many :purchase_options, as: :purchasable, dependent: :destroy
 end
