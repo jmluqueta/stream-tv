@@ -1,0 +1,29 @@
+{
+  "id": "file:/v1/season.json#",
+  "description": "Season stream content",
+  "example": { "id": "1", "plot": "plot", "title": "title", "number": 1, "episodes": [] },
+  "required": ["id", "plot", "title", "number", "episodes"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "plot": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "episodes": {
+      "description": "A collection of episodes",
+      "example": [{ "id": "1", "plot": "plot", "title": "title", "number": 1 }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/episode.json#"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "file:/v1/episode.json#",
+  "description": "Episode stream content",
+  "example": { "id": "1", "plot": "plot", "title": "title", "number": 1 },
+  "required": ["id", "plot", "title", "number"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "plot": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    }
+  }
+}

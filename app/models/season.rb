@@ -24,4 +24,6 @@
 class Season < Content
   has_many :episodes, foreign_key: 'parent_id', inverse_of: :season, dependent: :destroy
   has_many :purchase_options, as: :purchasable, dependent: :destroy
+
+  scope :sorted_by_created_at, -> { order(created_at: :desc) }
 end

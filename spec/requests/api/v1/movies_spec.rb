@@ -27,7 +27,7 @@ RSpec.describe 'Movies API', type: :request do
         expected_response['movies'] << { 'id' => movie.id, 'title' => movie.title, 'plot' => movie.plot }
       end
 
-      expect(json_response).to match(expected_response)
+      expect(json_response).to eq(expected_response)
     end
 
     context 'when the number of movies is greater than the number of elements per page' do

@@ -1,0 +1,20 @@
+{
+  "id": "file:/v1/season/index.json#",
+  "type": "object",
+  "definitions": {
+    "seasons": {
+      "description": "A collection of seasons",
+      "example": [{ "id": "1", "plot": "plot", "title": "title", "number": 1, "episodes": [] }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/season.json#"
+      }
+    }
+  },
+  "required": ["seasons"],
+  "properties": {
+    "seasons": {
+      "$ref": "#/definitions/seasons"
+    }
+  }
+}

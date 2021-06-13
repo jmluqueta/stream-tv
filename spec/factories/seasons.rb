@@ -26,5 +26,11 @@ FactoryBot.define do
     sequence(:number)
     plot { Faker::Movie.quote }
     title { Faker::Movie.title }
+
+    trait(:with_episodes) do
+      after(:create) do |season|
+        create_list(:episode, 5, season: season)
+      end
+    end
   end
 end

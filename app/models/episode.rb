@@ -22,5 +22,7 @@
 #  fk_rails_...  (parent_id => contents.id)
 #
 class Episode < Content
-  belongs_to :season, foreign_key: 'parent_id', inverse_of: :episodes
+  belongs_to :season, foreign_key: 'parent_id', inverse_of: :episodes, touch: true
+
+  scope :sorted_by_number, -> { order(number: :asc) }
 end

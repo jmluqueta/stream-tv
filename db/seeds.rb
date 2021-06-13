@@ -13,5 +13,8 @@ include FactoryBot::Syntax::Methods
 # Create movies
 create_list(:movie, 30)
 
+# Create seasons
+create_list(:season, 20, :with_episodes)
+
 # Create users
 create_list(:user, 1)
