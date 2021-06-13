@@ -1,0 +1,20 @@
+{
+  "id": "file:/v1/movies/index.json#",
+  "type": "object",
+  "definitions": {
+    "movies": {
+      "description": "A collection of movies",
+      "example": [{ "id": "1", "plot": "plot", "title": "title" }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/movie.json#"
+      }
+    }
+  },
+  "required": ["movies"],
+  "properties": {
+    "movies": {
+      "$ref": "#/definitions/movies"
+    }
+  }
+}

@@ -50,6 +50,7 @@ group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'json_matchers'
   gem 'shoulda-matchers', '~> 4.0'
 end
 

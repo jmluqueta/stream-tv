@@ -24,8 +24,8 @@
 FactoryBot.define do
   factory :episode do
     sequence(:number)
-    plot { Faker::Movie.title }
+    plot { Faker::Movie.quote }
     season
-    title { Faker::Movie.quote }
+    title { Faker::Movie.title }
   end
 end

@@ -23,4 +23,6 @@
 #
 class Movie < Content
   has_many :purchase_options, as: :purchasable, dependent: :destroy
+
+  scope :sorted_by_created_at, -> { order(created_at: :desc) }
 end

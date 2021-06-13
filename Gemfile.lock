@@ -89,6 +89,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    json_matchers (0.11.1)
+      json_schema
+    json_schema (0.21.0)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -230,6 +233,7 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot_rails
   faker
+  json_matchers
   kaminari
   listen (~> 3.3)
   mysql2 (~> 0.5)

@@ -1,0 +1,18 @@
+{
+  "id": "file:/v1/movie.json#",
+  "description": "Movie stream content",
+  "example": { "id": "1", "plot": "plot", "title": "title" },
+  "required": ["id", "plot", "title"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "plot": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
