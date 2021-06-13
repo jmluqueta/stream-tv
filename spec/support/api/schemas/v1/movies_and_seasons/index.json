@@ -1,0 +1,20 @@
+{
+  "id": "file:/v1/movies_and_season/index.json#",
+  "type": "object",
+  "definitions": {
+    "movies_and_seasons": {
+      "description": "A collection of movies and seasons",
+      "example": [{ "id": "1", "plot": "plot", "title": "title", "type": "Season", "number": 1, "episodes": [] }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/movie_or_season.json#"
+      }
+    }
+  },
+  "required": ["movies_and_seasons"],
+  "properties": {
+    "movies_and_seasons": {
+      "$ref": "#/definitions/movies_and_seasons"
+    }
+  }
+}

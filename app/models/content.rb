@@ -27,6 +27,8 @@ class Content < ApplicationRecord
   validates :plot, :title, :type, presence: true
   validates :number, presence: true, if: :needs_number?
 
+  scope :sorted_by_created_at, -> { order(created_at: :desc) }
+
   private
 
   def needs_number?

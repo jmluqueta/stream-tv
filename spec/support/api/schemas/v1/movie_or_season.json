@@ -1,0 +1,32 @@
+{
+  "id": "file:/v1/movie_or_season.json#",
+  "description": "Movie or season stream content",
+  "example": { "id": "1", "plot": "plot", "title": "title", "type": "Movie" },
+  "required": ["id", "plot", "title", "type"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "plot": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "episodes": {
+      "description": "A collection of episodes",
+      "example": [{ "id": "1", "plot": "plot", "title": "title", "number": 1 }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/episode.json#"
+      }
+    }
+  }
+}
