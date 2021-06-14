@@ -6,7 +6,7 @@ RSpec.describe Api::V1::MoviesAndSeasonsSerializer do
   describe '.serialize' do
     let!(:movie) { create(:movie) }
     let!(:season) { create(:season) }
-    let(:sorted_movies_and_seasons) { Content.where(type: %w[Movie Season]).sorted_by_created_at }
+    let(:sorted_movies_and_seasons) { Content.of_type_movie_and_season.sorted_by_created_at }
     let(:expected_format) do
       [
         {

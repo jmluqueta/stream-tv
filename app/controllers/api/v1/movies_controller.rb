@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../../../serializers/api/v1/movies_serializer'
-
 module Api
   module V1
     class MoviesController < ApplicationController

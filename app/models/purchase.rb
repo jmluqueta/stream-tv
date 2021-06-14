@@ -28,6 +28,7 @@ class Purchase < ApplicationRecord
   belongs_to :user
 
   scope :unexpired, -> { where('expired_at > ?', DateTime.now) }
+  scope :sorted_by_expired_at, -> { order(expired_at: :asc) }
 
   validate :uniqueness_by_user_and_purchase_option, on: :create
 

@@ -17,4 +17,8 @@ class User < ApplicationRecord
   has_many :purchases, dependent: :nullify
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true, uniqueness: true
+
+  def purchases_for_library
+    purchases.includes(purchase_option: :purchasable).unexpired.sorted_by_expired_at
+  end
 end

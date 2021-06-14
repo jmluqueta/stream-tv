@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../../../serializers/api/v1/movies_and_seasons_serializer'
-
 module Api
   module V1
     class MoviesAndSeasonsController < ApplicationController
@@ -10,7 +8,7 @@ module Api
       include UserAuthenticator
 
       def index
-        @movies_and_seasons = Content.where(type: %w[Movie Season]).sorted_by_created_at.page(params[:page])
+        @movies_and_seasons = Content.of_type_movie_and_season.sorted_by_created_at.page(params[:page])
 
         json_response({ movies_and_seasons: cached_movies_and_seasons })
       end

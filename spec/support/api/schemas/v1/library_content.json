@@ -1,0 +1,35 @@
+{
+  "id": "file:/v1/library_content.json#",
+  "description": "Movie or season purchased content",
+  "example": { "id": "1", "plot": "plot", "title": "title", "type": "Movie" },
+  "required": ["id", "plot", "title", "type", "quality"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "plot": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "quality": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "episodes": {
+      "description": "A collection of episodes",
+      "example": [{ "id": "1", "plot": "plot", "title": "title", "number": 1 }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/episode.json#"
+      }
+    }
+  }
+}

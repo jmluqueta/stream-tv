@@ -14,17 +14,10 @@ module Api
             type: content.type
           }
 
-          content_hash.merge!(season_data(content)) if content.type == 'Season'
+          content_hash.merge!(ContentData.season_data(content)) if content.type == 'Season'
 
           content_hash
         end
-      end
-
-      def self.season_data(season)
-        {
-          number: season.number,
-          episodes: EpisodesSerializer.serialize(season.episodes.sorted_by_number)
-        }
       end
     end
   end

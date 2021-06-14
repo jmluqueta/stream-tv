@@ -24,4 +24,18 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
   it { is_expected.to allow_value('valid@email.test').for(:email) }
   it { is_expected.not_to allow_value('incorrect_email').for(:email) }
+
+  describe '#purchases_for_library' do
+    let(:owner) { create(:user) }
+    let(:season_purchase) { create(:purchase, :for_season, user: owner) }
+    let(:movie_purchase) { create(:purchase, :for_movie, user: owner) }
+
+    before do
+      season_purchase.update!(expired_at: DateTime.now - 1.hour)
+    end
+
+    it 'returns only unexpired purchases for the user' do
+      expect(owner.purchases_for_library).to contain_exactly(movie_purchase)
+    end
+  end
 end

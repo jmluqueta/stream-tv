@@ -28,6 +28,7 @@ class Content < ApplicationRecord
   validates :number, presence: true, if: :needs_number?
 
   scope :sorted_by_created_at, -> { order(created_at: :desc) }
+  scope :of_type_movie_and_season, -> { where(type: %w[Movie Season]) }
 
   private
 

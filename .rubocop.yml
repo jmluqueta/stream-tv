@@ -32,4 +32,4 @@ RSpec/NestedGroups:
   Max: 4
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  IgnoredMethods: ['describe', 'context']

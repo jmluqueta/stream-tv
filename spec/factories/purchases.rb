@@ -25,5 +25,13 @@ FactoryBot.define do
   factory :purchase do
     purchase_option
     user
+
+    trait :for_movie do
+      purchase_option { create(:purchase_option, :for_movie) }
+    end
+
+    trait :for_season do
+      purchase_option { create(:purchase_option, :for_season) }
+    end
   end
 end

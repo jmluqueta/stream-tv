@@ -1,0 +1,20 @@
+{
+  "id": "file:/v1/users/library.json#",
+  "type": "object",
+  "definitions": {
+    "library": {
+      "description": "A collection of current purchased movies and seasons",
+      "example": [{ "id": "1", "plot": "plot", "title": "title", "type": "Movie", "quality": "HD" }],
+      "type": "array",
+      "items": {
+        "$ref": "file:/v1/library_content.json#"
+      }
+    }
+  },
+  "required": ["library"],
+  "properties": {
+    "library": {
+      "$ref": "#/definitions/library"
+    }
+  }
+}
