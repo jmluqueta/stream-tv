@@ -7,15 +7,6 @@ volumes:
   gem_cache:
   shared_data:
 services:
-  stream_tv_redis:
-    image: redis:6.2-alpine
-    command: redis-server
-    networks:
-      - development
-      - test
-      - prod
-    volumes:
-      - shared_data:/var/shared/redis
   stream_tv_db:
     image: mysql:8
     container_name: stream_tv_db
@@ -62,7 +53,6 @@ services:
       RAILS_ENV: development
     depends_on:
       - stream_tv_db
-      - stream_tv_redis
       - stream_tv_memcached
   stream_tv_test:
     image: stream_tv_base
@@ -104,5 +94,4 @@ services:
       RAILS_ENV: production
     depends_on:
       - stream_tv_db
-      - stream_tv_redis
       - stream_tv_memcached

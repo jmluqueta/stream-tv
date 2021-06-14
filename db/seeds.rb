@@ -24,3 +24,7 @@ create(:purchase_option, purchasable_id: Season.first.id, purchasable_type: 'Sea
 
 # Create users
 create_list(:user, 2)
+
+# Create purchases
+create(:purchase, purchase_option_id: PurchaseOption.first.id, user_id: User.last.id)
+create(:purchase, purchase_option_id: PurchaseOption.last.id, user_id: User.last.id)
