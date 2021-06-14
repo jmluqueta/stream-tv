@@ -32,9 +32,7 @@ RSpec.describe 'Seasons API', type: :request do
       get '/api/v1/seasons', params: { user_id: user.id }
     end
 
-    it 'has status code 200' do
-      expect(response).to have_http_status(:ok)
-    end
+    it_behaves_like 'correct get request'
 
     it 'matches valid schema' do
       expect(response).to match_json_schema('v1/seasons/index')

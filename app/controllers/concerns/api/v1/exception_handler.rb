@@ -13,6 +13,10 @@ module Api
         rescue_from ActiveRecord::RecordInvalid do |e|
           json_response({ error_message: e.message }, :unprocessable_entity)
         end
+
+        rescue_from ActiveRecord::RecordInvalid do |e|
+          json_response({ error_message: e.message }, :conflict)
+        end
       end
     end
   end

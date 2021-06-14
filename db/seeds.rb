@@ -16,5 +16,11 @@ create_list(:movie, 30)
 # Create seasons
 create_list(:season, 20, :with_episodes)
 
+# Create purchase_options
+create(:purchase_option, purchasable_id: Movie.first.id, purchasable_type: 'Movie', quality: 'HD', price: 3.99)
+create(:purchase_option, purchasable_id: Movie.first.id, purchasable_type: 'Movie', quality: 'SD', price: 2.99)
+create(:purchase_option, purchasable_id: Season.first.id, purchasable_type: 'Season', quality: 'HD', price: 9.99)
+create(:purchase_option, purchasable_id: Season.first.id, purchasable_type: 'Season', quality: 'SD', price: 7.99)
+
 # Create users
-create_list(:user, 1)
+create_list(:user, 2)

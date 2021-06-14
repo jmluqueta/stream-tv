@@ -28,8 +28,8 @@ Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
   Enabled: false
 
-RSpec/FactoryBot/CreateList:
-  Enabled: false
+RSpec/NestedGroups:
+  Max: 4
 
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
