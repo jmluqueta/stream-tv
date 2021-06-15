@@ -2,6 +2,7 @@
 
 ## Requirements
 * docker and docker-compose
+* If you don't want to run the application with docker, you need ruby 3.0.1, Rails 6.1.3 and MySQL 8 or 5.7
 
 ## Components
 * mySQL as RDBS
